@@ -5,6 +5,11 @@ using namespace std;
 
 namespace ariel {
     string hat(int input){
+	int h = input/10000000;
+	if(h<1 || h>4)
+	{
+		throw std::out_of_range{"nuber contains incorrect digits"};
+	}
 	switch (input/10000000)
 	{
 	case 1:
@@ -25,6 +30,11 @@ namespace ariel {
 }
 
 string nose(int input){
+	int n = (input/1000000)%(10);
+	if(n<1 || n>4)
+	{
+		throw std::out_of_range{"nuber contains incorrect digits"};
+	}
 	switch ((input/1000000)%(10))
 	{
 	case 1:
@@ -45,6 +55,11 @@ string nose(int input){
 }
 
 string leftEye(int input){
+	int le = (input/100000)%(10);
+	if(le<1 || le>4)
+	{
+		throw std::out_of_range{"nuber contains incorrect digits"};
+	}
 	switch ((input/100000)%(10))
 	{
 	case 1:
@@ -65,6 +80,11 @@ string leftEye(int input){
 }
 
 string rightEye(int input){
+	int re = (input/10000)%(10);
+	if(re<1 || re>4)
+	{
+		throw std::out_of_range{"nuber contains incorrect digits"};
+	}
 	switch ((input/10000)%(10))
 	{
 	case 1:
@@ -86,6 +106,11 @@ string rightEye(int input){
 }
 
 string leftArm(int input){
+	int la = (input/1000)%(10);
+	if(la<1 || la>4)
+	{
+		throw std::out_of_range{"nuber contains incorrect digits"};
+	}
 	switch ((input/1000)%(10))
 	{
 	case 1:
@@ -107,6 +132,11 @@ string leftArm(int input){
 }
 
 string rightArm(int input){
+	int ra = (input/100)%(10);
+	if(ra<1 || ra>4)
+	{
+		throw std::out_of_range{"nuber contains incorrect digits"};
+	}
 	switch ((input/100)%(10))
 	{
 	case 1:
@@ -128,6 +158,11 @@ string rightArm(int input){
 }
 
 string torso(int input){
+	int t = (input/10)%(10);
+	if(t<1 || t>4)
+	{
+		throw std::out_of_range{"nuber contains incorrect digits"};
+	}
 	switch ((input/10)%(10))
 	{
 	case 1:
@@ -149,6 +184,11 @@ string torso(int input){
 }
 
 string base(int input){
+	int b = (input%10);
+	if(b<1 || b>4)
+	{
+		throw std::out_of_range{"nuber contains incorrect digits"};
+	}
 	switch (input%10)
 	{
 	case 1:
@@ -171,6 +211,9 @@ string base(int input){
 
 string snowman(int input){
 	string h,n,le,re,la,ra,t,b,snowman,hatRow,headRow,bodyRow,legRow;
+	if(x<=0) {
+		throw std::out_of_range{"your number is negative"};
+	}
 	h = hat(input);
 	n = nose(input);
 	le = leftEye(input);
